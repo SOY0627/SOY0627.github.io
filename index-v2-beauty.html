@@ -233,35 +233,23 @@
   .polaroid.video-card:hover .play-badge{transform:translate(-50%,-50%) scale(1.12)}
   .p1{left:2%;top:4%;transform:rotate(-7deg);z-index:1}
   .p2{left:32%;top:0;transform:rotate(3deg);z-index:2}
-  .p3{left:55%;top:7%;transform:rotate(8deg);z-index:1}
+  .p3{left:51%;top:7%;transform:rotate(8deg);z-index:1}
   .p4{left:5%;top:43%;transform:rotate(5deg);z-index:2}
-  .p5{left:35%;top:46%;transform:rotate(-4deg);z-index:3}
-  .p6{left:57%;top:49%;transform:rotate(6deg);z-index:1}
+  .p5{left:35%;top:44%;transform:rotate(-4deg);z-index:3}
+  .p6{left:52%;top:42%;transform:rotate(6deg);z-index:1}
   .polaroid-wrap:hover .p1{transform:rotate(-10deg) translate(-18px,-10px) scale(1.04)}
   .polaroid-wrap:hover .p2{transform:rotate(1deg) translateY(-16px) scale(1.05)}
   .polaroid-wrap:hover .p3{transform:rotate(11deg) translate(16px,-8px) scale(1.04)}
   .polaroid-wrap:hover .p4{transform:rotate(8deg) translate(-20px,8px) scale(1.05)}
   .polaroid-wrap:hover .p5{transform:rotate(-2deg) translateY(12px) scale(1.07)}
   .polaroid-wrap:hover .p6{transform:rotate(9deg) translate(18px,10px) scale(1.04)}
-  /* ---------- 删占位后重排版：放大照片、补满拼贴区 ---------- */
-  .polaroid{width:218px}
-  .polaroid img,.polaroid .ph{height:148px}
-  .polaroid.video-card video{height:148px}
-  .polaroid .play-badge{top:81px}
-  .polaroid.poster{width:192px}
-  .polaroid.poster img{height:252px}
-  /* 三卡布局（POPO/茶歇/汉语桥）：上二下一铺满 */
-  #p-startup .feature:nth-child(2) .p1,#p-startup .feature:nth-child(5) .p1{left:0;top:6%}
-  #p-startup .feature:nth-child(2) .p2,#p-startup .feature:nth-child(5) .p2{left:33%;top:0}
-  #p-startup .feature:nth-child(2) .p3,#p-startup .feature:nth-child(5) .p3{left:18%;top:45%}
-  #p-startup .feature:nth-child(6) .p1{left:0;top:6%}
-  #p-startup .feature:nth-child(6) .p3{left:33%;top:0}
-  #p-startup .feature:nth-child(6) .p4{left:18%;top:45%}
-  /* 益起译（五卡）：右侧列内收防溢出 */
-  #p-startup .feature:nth-child(3) .p3{left:52%;top:7%;z-index:2}
-  #p-startup .feature:nth-child(3) .p6{left:52%;top:46%}
-  /* 自然不语（三卡）：上二下一三角铺满 */
-  #p-startup .feature:nth-child(4) .p6{left:18%;top:45%}
+  /* ---------- 删占位后重排版：放大尺寸 ---------- */
+  .polaroid{width:206px}
+  .polaroid img,.polaroid .ph{height:136px}
+  .polaroid.video-card video{height:136px}
+  .polaroid .play-badge{top:68px}
+  .polaroid.poster{width:172px}
+  .polaroid.poster img{height:232px}
   /* ---------- 拼贴排布模式 ---------- */
   body.layout-mode{user-select:none;-webkit-user-select:none}
   body.layout-mode .polaroid-wrap{animation:none}
@@ -588,6 +576,9 @@
           <div class="polaroid p1" data-cap="校园地推拉新现场"><img src="photos/popo-ground2.png" alt="校园地推拉新活动现场"><div class="p-cap">校园地推拉新现场</div></div>
           <div class="polaroid p2" data-cap="IP公众号爆文（阅读2.8w）"><img src="photos/popo-hot.jpg" alt="公众号爆文截图"><div class="p-cap">IP公众号爆文（阅读2.8w）</div></div>
           <div class="polaroid p3 video-card" data-cap="POPO陪拍·品牌宣传片"><video src="media/popo-brand.mp4" preload="metadata" playsinline muted></video><div class="play-badge"></div><div class="p-cap">品牌宣传片·点击观看</div></div>
+          <div class="polaroid p4" data-cap="POPO·海报物料（待补图）"><div class="ph">待补图<br>海报物料</div><div class="p-cap">海报物料 · 待补</div></div>
+          <div class="polaroid p5" data-cap="POPO·现场花絮（待补图）"><div class="ph">待补图<br>现场花絮</div><div class="p-cap">现场花絮 · 待补</div></div>
+          <div class="polaroid p6" data-cap="POPO·用户反馈（待补图）"><div class="ph">待补图<br>用户反馈</div><div class="p-cap">用户反馈 · 待补</div></div>
         </div>
         <div class="info">
           <h3><img class="brand-logo" src="photos/popo-mark.jpg" alt="POPO陪拍logo">POPO陪拍</h3>
@@ -609,6 +600,7 @@
           <div class="polaroid p2" data-cap="闲林老街·乡村导览活动"><img src="photos/yiqi-xianlin.jpg" alt="闲林老街导览活动合照"><div class="p-cap">闲林老街·乡村导览活动</div></div>
           <div class="polaroid p3" data-cap="汉服社联动·古风游园"><img src="photos/yiqi-hanfu.jpg" alt="汉服社联动活动合照"><div class="p-cap">汉服社联动·古风游园</div></div>
           <div class="polaroid p4" data-cap="满觉陇·茶山深度游"><img src="photos/yiqi-manjuelong.jpg" alt="满觉陇活动合照"><div class="p-cap">满觉陇·茶山深度游</div></div>
+          <div class="polaroid p5" data-cap="益起译·招募海报/团队证书（待补图）"><div class="ph">待补图<br>招募海报 · 团队证书</div><div class="p-cap">招募海报 · 团队证书 · 待补</div></div>
           <div class="polaroid p6" data-cap="百福岩村政府认可·团队合影"><img src="photos/yiqi-village.jpg" alt="益起译团队在百福岩村政府门口合影"><div class="p-cap">村政府认可·团队合影</div></div>
         </div>
         <div class="info">
@@ -628,6 +620,9 @@
         <div class="polaroid-wrap">
           <div class="polaroid p1" data-cap="昆虫夜探现场"><img src="photos/ziran-yetan-live.jpg" alt="夜探现场"><div class="p-cap">昆虫夜探现场</div></div>
           <div class="polaroid p2" data-cap="夜探活动·团队合照"><img src="photos/ziran-hezhao.jpg" alt="夜探活动合照"><div class="p-cap">夜探活动·团队合照</div></div>
+          <div class="polaroid p3" data-cap="自然不语·活动海报（待补图）"><div class="ph">待补图<br>活动海报</div><div class="p-cap">活动海报 · 待补</div></div>
+          <div class="polaroid p4" data-cap="自然不语·家长反馈（待补图）"><div class="ph">待补图<br>家长反馈</div><div class="p-cap">家长反馈 · 待补</div></div>
+          <div class="polaroid p5" data-cap="自然不语·方案文档（待补图）"><div class="ph">待补图<br>方案文档</div><div class="p-cap">方案文档 · 待补</div></div>
           <div class="polaroid p6" data-cap="铂悦城商场摆摊获客"><img src="photos/ziran-boyue.jpg" alt="铂悦城商场摆摊"><div class="p-cap">铂悦城商场摆摊获客</div></div>
         </div>
         <div class="info">
@@ -648,6 +643,9 @@
           <div class="polaroid p1" data-cap="校园风物节·新品试吃拉新"><img src="photos/chaxie-fengwu.jpg" alt="风物节试吃拉新"><div class="p-cap">校园风物节·新品试吃拉新</div></div>
           <div class="polaroid p2" data-cap="星光集市·校园夜市摆摊"><img src="photos/chaxie-night.jpg" alt="校园夜市摆摊合照"><div class="p-cap">星光集市·校园夜市摆摊</div></div>
           <div class="polaroid p3" data-cap="运营主体：海宁茶语餐饮有限公司营业执照"><img src="photos/chaxi-license.jpg" alt="茶歇小栈公司主体营业执照"><div class="p-cap">公司主体营业执照</div></div>
+          <div class="polaroid p4" data-cap="茶歇·销售数据（待补图）"><div class="ph">待补图<br>销售数据</div><div class="p-cap">销售数据 · 待补</div></div>
+          <div class="polaroid p5" data-cap="茶歇·复购群聊（待补图）"><div class="ph">待补图<br>复购群聊</div><div class="p-cap">复购群聊 · 待补</div></div>
+          <div class="polaroid p6" data-cap="茶歇·渠道陈列（待补图）"><div class="ph">待补图<br>渠道陈列</div><div class="p-cap">渠道陈列 · 待补</div></div>
         </div>
         <div class="info">
           <h3>茶歇小栈 · 酸奶产品线校园代运营（2024.4-2025.6）</h3>
@@ -665,8 +663,11 @@
       <div class="feature reveal">
         <div class="polaroid-wrap">
           <div class="polaroid p1" data-cap="开营仪式现场"><img src="photos/hyq-opening.jpg" alt="开营仪式"><div class="p-cap">开营仪式现场</div></div>
+          <div class="polaroid p2" data-cap="汉语桥·结营研讨（待补图）"><div class="ph">待补图<br>结营研讨</div><div class="p-cap">结营研讨 · 待补</div></div>
           <div class="polaroid p3" data-cap="项目主持现场"><img src="photos/hyq-hosting.jpg" alt="主持现场"><div class="p-cap">项目主持现场</div></div>
           <div class="polaroid p4" data-cap="中越学生合影"><img src="photos/hyq-group.jpg" alt="中越学生合影"><div class="p-cap">中越学生合影</div></div>
+          <div class="polaroid p5" data-cap="汉语桥·日程计划（待补图）"><div class="ph">待补图<br>日程计划</div><div class="p-cap">日程计划 · 待补</div></div>
+          <div class="polaroid p6" data-cap="汉语桥·筹备物料（待补图）"><div class="ph">待补图<br>筹备物料</div><div class="p-cap">筹备物料 · 待补</div></div>
         </div>
         <div class="info">
 <h3>2025年中越汉语桥“电商之旅”交流项目（2025.1）· 学生负责人</h3>
