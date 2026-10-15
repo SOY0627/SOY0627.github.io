@@ -96,10 +96,10 @@
   .hero{padding-top:78px}
     .hero .hello{
     display:block;font-family:var(--disp);font-weight:900;color:var(--ink);
-    font-size:clamp(26px,4.2vw,40px);letter-spacing:-1px;line-height:1;
+    font-size:clamp(17px,2.8vw,27px);letter-spacing:-.5px;line-height:1;
   }
     .hero h1{
-    font-family:var(--disp);font-size:clamp(64px,9vw,112px);font-weight:900;letter-spacing:-2px;line-height:1;margin:22px 0 16px;
+    font-family:var(--disp);font-size:clamp(43px,6vw,75px);font-weight:900;letter-spacing:-1.5px;line-height:1;margin:18px 0 14px;
   }
   .hero .pos{font-size:16px;color:var(--muted);font-weight:500}
   .hero .pos b{color:var(--ink);background:linear-gradient(transparent 60%,rgba(255,138,46,.30) 60%);padding:0 2px}
@@ -267,8 +267,12 @@
   .polaroid.poster{width:172px}
   .polaroid.poster img{height:232px}
   .feature .info{flex:1;min-width:0;align-self:center}
+  .vid-link{color:var(--blue);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+  .vid-link:hover{opacity:.75}
   .feature .info h3{font-size:17.5px;font-weight:900;line-height:1.5}
   .feature .info h3 .brand-logo{height:36px;width:36px;object-fit:contain;border-radius:50%;vertical-align:-12px;margin-right:8px;background:#fff;box-shadow:var(--sh-soft);padding:2px;box-sizing:border-box}
+  .feature .info h3 .h-meta{display:inline-block;font-size:.68em;font-weight:700;color:#a09d8c;margin-left:8px;letter-spacing:0;transform:translateY(-1px)}
+  .feature .info h3 .h-meta .nowrap{white-space:nowrap}
   .feature .info .desc{font-size:13px;color:#33333a;margin-top:10px;font-weight:500}
   .metrics{display:flex;gap:22px;margin-top:18px;flex-wrap:wrap}
     .metric .v{font-family:var(--disp);font-size:22px;font-weight:900;color:var(--orange)}
@@ -460,7 +464,6 @@
 <div class="stats">
 <div class="stat"><div class="num"><span data-count="4">0</span><small> 段</small></div><div class="lbl">互联网公司实习</div></div>
 <div class="stat"><div class="num"><span data-count="8">0</span><small> 项</small></div><div class="lbl">省级A类竞赛奖项</div></div>
-<div class="stat"><div class="num"><span data-count="800">0</span><small> +</small></div><div class="lbl">达人建联合作</div></div>
 <div class="stat"><div class="num"><span data-count="3">0</span><small> 个</small></div><div class="lbl">校园创业实践项目</div></div>
 <div class="stat"><div class="num"><span data-count="2">0</span><small> 个</small></div><div class="lbl">校园公益实践</div></div>
 </div>
@@ -610,7 +613,7 @@
           <div class="polaroid p6 top" data-cap="百福岩村政府认可·团队合影"><img loading="lazy" decoding="async" src="photos/yiqi-village.webp" alt="益起译团队在百福岩村政府门口合影"><div class="p-cap">村政府认可·团队合影</div></div>
         </div>
         <div class="info">
-          <h3><img class="brand-logo" src="photos/yiqi-logo.jpg" alt="益起译logo">益起译公益组织（2024.9-2025.11）· 项目联合创始人</h3>
+          <h3><img class="brand-logo" src="photos/yiqi-logo.jpg" alt="益起译logo">益起译公益组织<span class="h-meta"><span class="nowrap">2024.9-2025.11</span> · 项目联合创始人</span></h3>
           <p class="desc">在外国人来华旅游浪潮下，为助力实现文旅兴旺，对接本校学生导览员，带领外国友人打破语言壁垒，到中国特色场景“深度游”；运营“益起TRAVEL”社群并组织外国游客十余次乡村深入游览，获温州百福岩村、建德大同村村政府认可，团队荣获浙江外国语学院2024年优秀暑期实践团队称号。</p>
           <div class="metrics">
             <div class="metric"><div class="v"><span data-count="100">0</span><small> +</small></div><div class="k">社群外国游客</div></div>
@@ -632,14 +635,13 @@
           <div class="polaroid p6 top" data-cap="铂悦城商场摆摊获客"><img loading="lazy" decoding="async" src="photos/ziran-boyue.webp" alt="铂悦城商场摆摊"><div class="p-cap">铂悦城商场摆摊获客</div></div>
         </div>
         <div class="info">
-          <h3>自然不语亲子研学（2024.3-2025.12）· 核心成员</h3>
-          <p class="desc">活动策划：独立负责全流程方案设计、招募与现场统筹。设计"引流款+利润款"产品结构——低客单夜探高频引流，高客单海岛研学贡献利润。</p>
+          <h3>自然不语亲子研学<span class="h-meta"><span class="nowrap">2024.3-2025.12</span> · 核心成员</span></h3>
+          <p class="desc">我主要负责：参与活动路线策划与偶尔参与执行；在重要自媒体内容发布上，通过美化排版设计出品牌调性。</p>
           <div class="metrics">
             <div class="metric"><div class="v"><span data-count="11">0</span><small> 场</small></div><div class="k">研学活动落地</div></div>
             <div class="metric"><div class="v"><span data-count="2.4">0</span><small> 万+</small></div><div class="k">总营收（元）</div></div>
             <div class="metric"><div class="v"><span data-count="1.2">0</span><small> 万+</small></div><div class="k">净利润（元）</div></div>
           </div>
-          <p class="story">复盘：小生意教会我最重要的一课——每个产品都要能报出单场收入、成本和ROI，否则不配上线。</p>
         </div>
       </div>
 
@@ -651,8 +653,8 @@
           <div class="polaroid p3" data-cap="运营主体：海宁茶语餐饮有限公司营业执照"><img loading="lazy" decoding="async" src="photos/chaxi-license.webp" alt="茶歇小栈公司主体营业执照"><div class="p-cap">公司主体营业执照</div></div>
         </div>
         <div class="info">
-          <h3>茶歇小栈 · 酸奶产品线校园代运营（2024.4-2025.6）· 核心成员</h3>
-          <p class="desc">项目负责人：承接宋酒文化旗下酸奶产品线校园线上线下代运营，策划大规模地推获客并搭建私域社群持续促活转化。</p>
+          <h3>茶歇小栈 · 酸奶产品线校园代运营<span class="h-meta"><span class="nowrap">2024.4-2025.6</span> · 核心成员</span></h3>
+          <p class="desc">承接宋酒文化旗下酸奶产品线校园线上线下代运营，策划大规模地推获客并搭建私域社群持续促活转化。</p>
           <div class="metrics">
             <div class="metric"><div class="v"><span data-count="300">0</span><small> 人</small></div><div class="k">私域社群规模</div></div>
             <div class="metric"><div class="v"><span>100%</span></div><div class="k">月度营业额目标达成</div></div>
@@ -670,7 +672,7 @@
           <div class="polaroid p4" data-cap="中越学生合影"><img loading="lazy" decoding="async" src="photos/hyq-group.webp" alt="中越学生合影"><div class="p-cap">中越学生合影</div></div>
         </div>
         <div class="info">
-<h3>2025年中越汉语桥“电商之旅”交流项目（2025.1）· 学生负责人</h3>
+<h3>2025年中越汉语桥“电商之旅”交流项目<span class="h-meta"><span class="nowrap">2025.1</span> · 学生负责人</span></h3>
 <p class="desc">负责线下项目活动筹备、场所安排、日程计划及项目统筹；承办开营仪式与结营研讨，全程主持累计达30课时。</p>
 <div class="metrics">
   <div class="metric"><div class="v"><span data-count="20">0</span><small> +</small></div><div class="k">覆盖中越学生数</div></div>
@@ -724,7 +726,6 @@
 <div class="skill-group">
 <h3>AI 工具链与效率工程</h3>
 <div class="skill-row"><div class="s-name">低代码开发<small>使用NoCode独立从0到1落地产品</small></div><div class="bar"><i data-w="85"></i></div><div class="s-lv hi">熟练</div></div>
-<div class="skill-row"><div class="s-name">DEAP 自动化工作流<small>达人结算流程自动化</small></div><div class="bar"><i data-w="80"></i></div><div class="s-lv hi">熟练</div></div>
 <div class="skill-row"><div class="s-name">AI图文视频创作<small>使用可灵、libTV进行内容共创产出物料</small></div><div class="bar"><i data-w="82"></i></div><div class="s-lv hi">熟练</div></div>
 <div class="skill-row"><div class="s-name">Codex / AI编程<small>实现个人项目开发</small></div><div class="bar"><i data-w="70"></i></div><div class="s-lv">掌握</div></div>
 </div>
