@@ -45,22 +45,47 @@
   .sidebar{
     position:fixed; inset:0 auto 0 0; width:var(--sidebar-w);
     background:#fff; border-right:1px solid var(--line);
-    display:flex; flex-direction:column; padding:30px 18px; z-index:50;
+    display:flex; flex-direction:column; padding:30px 20px 26px; z-index:50;
   }
-  .brand{font-family:var(--disp);font-size:21px;letter-spacing:.5px}
-  .brand small{display:block;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
-  nav{margin-top:28px;flex:1;display:flex;flex-direction:column;gap:4px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-size:20px;letter-spacing:.5px}
+  .brand .avatar{
+    position:relative;flex:none;width:38px;height:38px;border-radius:12px;
+    background:linear-gradient(135deg,#ffb340,#ff8a2e);color:#fff;
+    font-size:18px;font-weight:900;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(255,138,46,.35);
+  }
+  .brand .avatar::after{
+    content:"";position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:50%;
+    background:#2fce6b;border:2px solid #fff;animation:avatarPulse 2.4s infinite;
+  }
+  @keyframes avatarPulse{0%,100%{box-shadow:0 0 0 0 rgba(47,206,107,.4)}55%{box-shadow:0 0 0 5px rgba(47,206,107,0)}}
+  .brand small{display:block;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:11px;color:var(--muted);font-weight:400;margin-top:3px;letter-spacing:.2px}
+  nav{position:relative;margin-top:34px;flex:1;display:flex;flex-direction:column;gap:2px}
+  nav::before{content:"";position:absolute;left:2px;top:8px;bottom:8px;width:2px;border-radius:2px;background:#f0efe9}
+  .rail-dot{
+    position:absolute;left:0;top:0;width:6px;height:24px;border-radius:3px;
+    background:linear-gradient(180deg,#ffb340,#ff8a2e);box-shadow:0 2px 8px rgba(255,138,46,.45);
+    transition:transform .45s cubic-bezier(.22,1,.36,1),height .3s;will-change:transform;
+  }
   nav a{
-    display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
-    font-size:13.5px;font-weight:700;color:var(--muted);transition:.15s;
+    position:relative;display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;
+    font-size:13.5px;font-weight:700;color:var(--muted);
+    transition:color .2s,background .2s,transform .2s;animation:navIn .55s backwards;
   }
-  nav a:hover{background:#f6f6f1;color:var(--ink)}
-  nav a.active{
-    color:var(--ink);font-weight:900;
-    background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 92%,transparent 92%);
+  nav a i{
+    font-style:normal;font-size:10px;font-weight:800;font-variant-numeric:tabular-nums;
+    color:#cfccbc;width:16px;flex:none;transition:color .2s;
   }
-  nav .sub{padding-left:30px;font-size:12.5px}
-  .side-foot{font-size:11px;color:var(--muted);line-height:1.6;font-weight:700}
+  nav a:hover{background:#f6f6f1;color:var(--ink);transform:translateX(3px)}
+  nav a.active{color:var(--ink);font-weight:900;background:#faf9f2}
+  nav a.active i{color:var(--orange)}
+  nav a:nth-of-type(1){animation-delay:.05s}nav a:nth-of-type(2){animation-delay:.1s}
+  nav a:nth-of-type(3){animation-delay:.15s}nav a:nth-of-type(4){animation-delay:.2s}
+  nav a:nth-of-type(5){animation-delay:.25s}nav a:nth-of-type(6){animation-delay:.3s}
+  nav a:nth-of-type(7){animation-delay:.35s}nav a:nth-of-type(8){animation-delay:.4s}
+  @keyframes navIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+  nav .sub{margin-left:20px;font-size:12.5px}
+  .side-foot{font-size:11px;color:var(--muted);line-height:1.6;font-weight:700;border-top:1px dashed var(--line);padding-top:14px}
   /* ---------- 顶部导览（移动） ---------- */
   .topbar{
     display:none;position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);
@@ -424,16 +449,17 @@
 
 <!-- 桌面端导览窗格 -->
 <aside class="sidebar">
-  <div class="brand">陈淑怡<small>27届 · 市场 / 运营 / 销售</small></div>
+  <div class="brand"><span class="avatar">陈</span><span>陈淑怡<small>27届 · 市场 / 运营 / 销售</small></span></div>
   <nav id="nav">
-    <a href="#hero" class="active">个人简介</a>
-    <a href="#intern">实习经历</a>
-    <a href="#projects">项目展示</a>
-    <a href="#p-ai" class="sub">AI 实践</a>
-    <a href="#p-startup" class="sub">创新创业实践</a>
-    <a href="#honors">荣誉墙</a>
-    <a href="#skills">技能与工具</a>
-    <a href="#contact">联系我</a>
+    <div class="rail-dot" aria-hidden="true"></div>
+    <a href="#hero" class="active"><i>01</i>个人简介</a>
+    <a href="#intern"><i>02</i>实习经历</a>
+    <a href="#projects"><i>03</i>项目展示</a>
+    <a href="#p-ai" class="sub"><i>04</i>AI 实践</a>
+    <a href="#p-startup" class="sub"><i>05</i>创新创业实践</a>
+    <a href="#honors"><i>06</i>荣誉墙</a>
+    <a href="#skills"><i>07</i>技能与工具</a>
+    <a href="#contact"><i>08</i>联系我</a>
   </nav>
   <div class="side-foot">本站由我亲手搭建并部署<br>Last Update 2026.10</div>
 </aside>
@@ -996,9 +1022,23 @@ const spy = new IntersectionObserver(es=>{
     if(!en.isIntersecting) return;
     const id = '#'+en.target.id;
     allNav.forEach(a=>a.classList.toggle('active', a.getAttribute('href')===id));
+    moveRail();
   });
 },{rootMargin:'-30% 0px -60% 0px'});
 spyMap.forEach(([_,sel])=>{ const el=document.querySelector(sel); if(el) spy.observe(el); });
+
+/* ---------- 侧边导航滑动指示器 ---------- */
+const railDot = document.querySelector('#nav .rail-dot');
+function moveRail(){
+  if(!railDot) return;
+  const act = document.querySelector('#nav a.active');
+  if(!act) return;
+  railDot.style.height = (act.offsetHeight - 10) + 'px';
+  railDot.style.transform = 'translateY(' + (act.offsetTop + 5) + 'px)';
+}
+moveRail();
+window.addEventListener('resize', moveRail);
+window.addEventListener('load', moveRail);
 
 /* ---------- 实习经历：工作内容下拉 ---------- */
 document.querySelectorAll('.jd-toggle').forEach(function(btn){
