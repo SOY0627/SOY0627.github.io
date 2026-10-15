@@ -25,7 +25,11 @@
     color:var(--ink); line-height:1.7;
   }
   a{color:inherit;text-decoration:none}
-    /* ---------- 极简版：装饰涂鸦已移除 ---------- */
+    /* 品牌IP小徽章（POPO小土豆） */
+  .ip-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:#d96f00;background:#fff0e0;border-radius:999px;padding:2px 10px 2px 3px;margin:6px 0 0}
+  .ip-badge img{width:20px;height:20px;border-radius:50%;object-fit:cover;background:#fff}
+
+/* ---------- 极简版：装饰涂鸦已移除 ---------- */
   section,.sub-sec{position:relative}
   /* ---------- 侧边导览（桌面） ---------- */
   .sidebar{
@@ -575,14 +579,15 @@
         <div class="polaroid-wrap">
           <div class="polaroid p1" data-cap="校园地推拉新现场"><img src="photos/popo-ground2.png" alt="校园地推拉新活动现场"><div class="p-cap">校园地推拉新现场</div></div>
           <div class="polaroid p2" data-cap="IP公众号爆文（阅读2.8w）"><img src="photos/popo-hot.jpg" alt="公众号爆文截图"><div class="p-cap">IP公众号爆文（阅读2.8w）</div></div>
-          <div class="polaroid p3 video-card" data-cap="POPO陪拍·品牌宣传片"><video src="media/popo-brand.mp4" preload="metadata" playsinline muted></video><div class="play-badge"></div><div class="p-cap">品牌宣传片·点击观看</div></div>
-          <div class="polaroid p4" data-cap="POPO·海报物料（待补图）"><div class="ph">待补图<br>海报物料</div><div class="p-cap">海报物料 · 待补</div></div>
-          <div class="polaroid p5" data-cap="POPO·现场花絮（待补图）"><div class="ph">待补图<br>现场花絮</div><div class="p-cap">现场花絮 · 待补</div></div>
-          <div class="polaroid p6" data-cap="POPO·用户反馈（待补图）"><div class="ph">待补图<br>用户反馈</div><div class="p-cap">用户反馈 · 待补</div></div>
+          <div class="polaroid p3" data-cap="POPO·阶段性成果展示"><img src="photos/popo-achievements.png" alt="POPO阶段性成果展示海报"><div class="p-cap">阶段性成果展示</div></div>
+          <div class="polaroid p4" data-cap="陪拍师面试座谈会"><img src="photos/popo-interview.png" alt="陪拍师面试座谈会现场"><div class="p-cap">陪拍师面试座谈会</div></div>
+          <div class="polaroid p5" data-cap="项目真实落地·朋友圈宣传与公众号"><img src="photos/popo-moments.png" alt="朋友圈宣传与公众号主页截图"><div class="p-cap">真实落地·朋友圈宣传</div></div>
+          <div class="polaroid p6" data-cap="客户二次合作反馈·聊天记录"><img src="photos/popo-chat.png" alt="客户二次合作反馈聊天记录"><div class="p-cap">客户二次合作反馈</div></div>
         </div>
         <div class="info">
           <h3><img class="brand-logo" src="photos/popo-mark.jpg" alt="POPO陪拍logo">POPO陪拍</h3>
-          <p class="desc">项目创始人：以Z世代孤独经济与轻社交需求为背景，从需求验证、团队组建到路演地推与变现全流程操盘。</p>
+          <div class="ip-badge"><img src="photos/popo-potato.png" alt="POPO小土豆">品牌IP：POPO小土豆</div>
+          <p class="desc">项目创始人：以Z世代孤独经济与轻社交需求为背景，从需求验证、团队组建到路演地推与变现全流程操盘。POPO陪拍小程序已于2024年上线，<a href="javascript:void(0)" class="vid-link">点击观看品牌宣传片</a>。</p>
           <div class="metrics">
             <div class="metric"><div class="v"><span data-count="1000">0</span><small> +</small></div><div class="k">覆盖学生用户</div></div>
             <div class="metric"><div class="v"><span data-count="29">0</span><small> %</small></div><div class="k">客户转化率</div></div>
@@ -894,6 +899,11 @@ document.addEventListener('keydown',e=>{
     if(e.key==='ArrowLeft') lbStep(-1);
     if(e.key==='ArrowRight') lbStep(1);
   }
+});
+
+/* 品牌宣传片文字链接 */
+document.querySelectorAll('.vid-link').forEach(a=>{
+  a.addEventListener('click',e=>{ e.preventDefault(); openVid('media/popo-brand.mp4','POPO陪拍 · 品牌宣传片'); });
 });
 
 /* 拍立得照片墙：点击翻看该项目的全部照片（视频卡除外，单独走播放器） */
