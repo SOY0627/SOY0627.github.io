@@ -151,8 +151,8 @@
   .job li{font-size:13.5px;color:#33333a;margin:6px 0}
   .job li b{background:linear-gradient(transparent 64%,rgba(255,210,63,.5) 64%);padding:0 1px}
   /* 工作内容下拉 */
-  .jd-toggle{margin-top:10px;border:none;background:#f6f6f1;color:var(--ink);font-size:12px;font-weight:800;padding:7px 15px;border-radius:999px;cursor:pointer;font-family:inherit;transition:.15s;box-shadow:var(--sh-soft)}
-  .jd-toggle:hover{background:#fff0e0;color:#d96f00}
+.jd-toggle{margin-top:10px;border:none;background:rgba(255,138,46,.3);color:var(--ink);font-size:12px;font-weight:800;padding:7px 15px;border-radius:999px;cursor:pointer;font-family:inherit;transition:.15s;box-shadow:var(--sh-soft)}
+.jd-toggle:hover{background:rgba(255,138,46,.5);color:#b35900}
   .jd-toggle .arr{display:inline-block;margin-left:5px;transition:transform .25s;font-size:10px}
   .job.open .jd-toggle .arr{transform:rotate(180deg)}
   .job .job-detail{display:none}
@@ -251,6 +251,7 @@
   .p4{left:5%;top:43%;transform:rotate(5deg);z-index:2}
   .p5{left:35%;top:44%;transform:rotate(-4deg);z-index:3}
   .p6{left:52%;top:42%;transform:rotate(6deg);z-index:1}
+.polaroid.top{z-index:5}
   .polaroid-wrap:hover .p1{transform:rotate(-10deg) translate(-18px,-10px) scale(1.04)}
   .polaroid-wrap:hover .p2{transform:rotate(1deg) translateY(-16px) scale(1.05)}
   .polaroid-wrap:hover .p3{transform:rotate(11deg) translate(16px,-8px) scale(1.04)}
@@ -264,25 +265,6 @@
   .polaroid .play-badge{top:86px}
   .polaroid.poster{width:172px}
   .polaroid.poster img{height:232px}
-  /* ---------- 拼贴排布模式 ---------- */
-  body.layout-mode{user-select:none;-webkit-user-select:none}
-  body.layout-mode .polaroid-wrap{animation:none}
-  body.layout-mode .polaroid{cursor:grab;outline:2px dashed #2f6bff;outline-offset:3px;box-shadow:0 10px 26px rgba(47,107,255,.3)}
-  body.layout-mode .polaroid:active{cursor:grabbing}
-  body.layout-mode .polaroid-wrap:hover .p1{transform:rotate(-7deg)}
-  body.layout-mode .polaroid-wrap:hover .p2{transform:rotate(3deg)}
-  body.layout-mode .polaroid-wrap:hover .p3{transform:rotate(8deg)}
-  body.layout-mode .polaroid-wrap:hover .p4{transform:rotate(5deg)}
-  body.layout-mode .polaroid-wrap:hover .p5{transform:rotate(-4deg)}
-  body.layout-mode .polaroid-wrap:hover .p6{transform:rotate(6deg)}
-  .polaroid .lz{
-    display:none;position:absolute;top:-14px;width:26px;height:26px;border-radius:50%;border:none;
-    background:#fff;box-shadow:0 3px 10px rgba(20,20,20,.25);font-size:12px;font-weight:900;
-    cursor:pointer;z-index:20;align-items:center;justify-content:center;padding:0;line-height:1;
-  }
-  body.layout-mode .polaroid .lz{display:flex}
-  .polaroid .lz-up{left:-8px;color:#2f6bff}
-  .polaroid .lz-down{right:-8px;color:#9a978a}
   .feature .info{flex:1;min-width:0;align-self:center}
   .feature .info h3{font-size:17.5px;font-weight:900;line-height:1.5}
   .feature .info h3 .brand-logo{height:36px;width:36px;object-fit:contain;border-radius:50%;vertical-align:-12px;margin-right:8px;background:#fff;box-shadow:var(--sh-soft);padding:2px;box-sizing:border-box}
@@ -468,8 +450,8 @@
   <section id="hero" class="hero">
     <div class="hello">HELLO, I'M</div>
     <h1>陈淑怡</h1>
-    <p class="pos">27届 · <b>市场营销 / 运营 / 销售</b> · 浙江外国语学院（国际经济与贸易·全英教学）</p>
-    <p class="pos" style="margin-top:4px">4段互联网公司实习 × 8项省级竞赛 × 爱把想法做成能跑的东西</p>
+    <p class="pos">27届 · <b>市场 / 运营 / 销售</b> · 浙江外国语学院（国际经济与贸易·全英教学）</p>
+    <p class="pos" style="margin-top:4px">我的人生格言：充分发挥主观能动性。</p>
     <div class="cta">
       <a class="btn primary" href="简历/陈淑怡-运营版.pdf" download="陈淑怡-2027届-浙江外国语学院.pdf">下载简历 PDF</a>
       <a class="btn ghost" href="#contact">联系我</a>
@@ -612,7 +594,7 @@
             <div class="metric"><div class="v"><span data-count="3">0</span><small> 万+</small></div><div class="k">累计流水（元）</div></div>
             <div class="metric"><div class="v"><span data-count="2.8">0</span><small> w</small></div><div class="k">公众号单篇最高阅读</div></div>
           </div>
-          <p class="story">复盘：学生创业最贵的是获客——地推、内容、社群三条路都试过之后，才知道哪条路的ROI撑得起商业模式。</p>
+          <p class="story">学生创业最贵的是获客——地推、内容、社群三条路都试过之后，才知道哪条路的ROI撑得起商业模式。</p>
         </div>
       </div>
 
@@ -622,9 +604,9 @@
           <div class="polaroid p1" data-cap="外桐坞村活动留念"><img src="photos/yiqi-waitongwu.jpg" alt="外桐坞村导览活动"><div class="p-cap">外桐坞村活动留念</div></div>
           <div class="polaroid p2" data-cap="闲林老街·乡村导览活动"><img src="photos/yiqi-xianlin.jpg" alt="闲林老街导览活动合照"><div class="p-cap">闲林老街·乡村导览活动</div></div>
           <div class="polaroid p3" data-cap="汉服社联动·古风游园"><img src="photos/yiqi-hanfu.jpg" alt="汉服社联动活动合照"><div class="p-cap">汉服社联动·古风游园</div></div>
-          <div class="polaroid p4" data-cap="益起译小程序·双语社区Demo"><img src="photos/yiqi-demo.png" alt="益起译小程序demo界面"><div class="p-cap">小程序·双语社区Demo</div></div>
+          <div class="polaroid p4" data-cap="益起译小程序·双语社区Demo"><img src="photos/yiqi-demo.png" alt="益起译小程序demo界面"><div class="p-cap">小程序Demo</div></div>
           <div class="polaroid p5" data-cap="社媒矩阵·公众号+小红书"><img src="photos/yiqi-social.png" alt="益起译社媒宣传截图"><div class="p-cap">社媒矩阵·公众号+小红书</div></div>
-          <div class="polaroid p6" data-cap="百福岩村政府认可·团队合影"><img src="photos/yiqi-village.jpg" alt="益起译团队在百福岩村政府门口合影"><div class="p-cap">村政府认可·团队合影</div></div>
+          <div class="polaroid p6 top" data-cap="百福岩村政府认可·团队合影"><img src="photos/yiqi-village.jpg" alt="益起译团队在百福岩村政府门口合影"><div class="p-cap">村政府认可·团队合影</div></div>
         </div>
         <div class="info">
           <h3><img class="brand-logo" src="photos/yiqi-logo.jpg" alt="益起译logo">益起译公益组织（2024.9-2025.11）· 项目联合创始人</h3>
@@ -634,22 +616,22 @@
             <div class="metric"><div class="v"><span data-count="3">0</span><small> 次</small></div><div class="k">乡村深度游</div></div>
             <div class="metric"><div class="v"><span data-count="2">0</span><small> 个</small></div><div class="k">村政府书面认可</div></div>
           </div>
-          <p class="story">复盘：公益要跑得久，靠的是双向价值——消费场景要客流与传播，外国游客要真实的中国体验，志愿导览员就是把这两端接起来的那座桥。</p>
+          <p class="story">公益要跑得久，靠的是双向价值——消费场景要客流与传播，外国游客要真实的中国体验，志愿导览员就是把这两端接起来的那座桥。</p>
         </div>
       </div>
 
       <!-- 自然不语 -->
       <div class="feature reveal">
         <div class="polaroid-wrap">
-          <div class="polaroid p1" data-cap="昆虫夜探现场"><img src="photos/ziran-yetan-live.jpg" alt="夜探现场"><div class="p-cap">昆虫夜探现场</div></div>
-          <div class="polaroid p2" data-cap="夜探活动·团队合照"><img src="photos/ziran-hezhao.jpg" alt="夜探活动合照"><div class="p-cap">夜探活动·团队合照</div></div>
-          <div class="polaroid p3" data-cap="标本课、灯诱昆虫等活动实录"><img src="photos/ziran-activities.png" alt="标本课与灯诱昆虫活动实录拼图"><div class="p-cap">标本课·灯诱昆虫活动实录</div></div>
+          <div class="polaroid p1" data-cap="昆虫夜探活动现场"><img src="photos/ziran-yetan-live.jpg" alt="夜探现场"><div class="p-cap">昆虫夜探活动现场</div></div>
+          <div class="polaroid p2" data-cap="夜探活动合影留念"><img src="photos/ziran-hezhao.jpg" alt="夜探活动合照"><div class="p-cap">夜探活动合影留念</div></div>
+          <div class="polaroid p3" data-cap="标本课、灯诱昆虫等活动实录"><img src="photos/ziran-activities.png" alt="标本课与灯诱昆虫活动实录拼图"><div class="p-cap">标本课、灯诱昆虫活动实录</div></div>
           <div class="polaroid p4" data-cap="社群真实运营·群内发布活动"><img src="photos/ziran-community.png" alt="社群发布活动截图"><div class="p-cap">社群真实运营·发布活动</div></div>
-          <div class="polaroid p5" data-cap="自然不语·协同负责公众号排版与品牌调性确定"><img src="photos/ziran-gzh.png" alt="自然不语公众号排版与品牌调性"><div class="p-cap">公众号排版·品牌调性确定</div></div>
-          <div class="polaroid p6" data-cap="铂悦城商场摆摊获客"><img src="photos/ziran-boyue.jpg" alt="铂悦城商场摆摊"><div class="p-cap">铂悦城商场摆摊获客</div></div>
+          <div class="polaroid p5" data-cap="自然不语·公众号排版与品牌调性奠定"><img src="photos/ziran-gzh.png" alt="自然不语公众号排版与品牌调性"><div class="p-cap">公众号排版与品牌调性奠定</div></div>
+          <div class="polaroid p6 top" data-cap="铂悦城商场摆摊获客"><img src="photos/ziran-boyue.jpg" alt="铂悦城商场摆摊"><div class="p-cap">铂悦城商场摆摊获客</div></div>
         </div>
         <div class="info">
-          <h3>自然不语亲子研学（2024.3-2025.12）</h3>
+          <h3>自然不语亲子研学（2024.3-2025.12）· 核心成员</h3>
           <p class="desc">活动策划：独立负责全流程方案设计、招募与现场统筹。设计"引流款+利润款"产品结构——低客单夜探高频引流，高客单海岛研学贡献利润。</p>
           <div class="metrics">
             <div class="metric"><div class="v"><span data-count="11">0</span><small> 场</small></div><div class="k">研学活动落地</div></div>
@@ -668,21 +650,21 @@
           <div class="polaroid p3" data-cap="运营主体：海宁茶语餐饮有限公司营业执照"><img src="photos/chaxi-license.jpg" alt="茶歇小栈公司主体营业执照"><div class="p-cap">公司主体营业执照</div></div>
         </div>
         <div class="info">
-          <h3>茶歇小栈 · 酸奶产品线校园代运营（2024.4-2025.6）</h3>
+          <h3>茶歇小栈 · 酸奶产品线校园代运营（2024.4-2025.6）· 核心成员</h3>
           <p class="desc">项目负责人：承接宋酒文化旗下酸奶产品线校园线上线下代运营，策划大规模地推获客并搭建私域社群持续促活转化。</p>
           <div class="metrics">
             <div class="metric"><div class="v"><span data-count="300">0</span><small> 人</small></div><div class="k">私域社群规模</div></div>
             <div class="metric"><div class="v"><span>100%</span></div><div class="k">月度营业额目标达成</div></div>
             <div class="metric"><div class="v">闭环</div><div class="k">获客-转化-复购</div></div>
           </div>
-          <p class="story">复盘：校园渠道的本质是信任半径——地推建立第一次触达，社群运营决定复购能不能发生。</p>
+          <p class="story">校园渠道的本质是信任半径——地推建立第一次和同学们触达，社群运营决定复购能不能发生。</p>
         </div>
       </div>
 
       <!-- 中越汉语桥 -->
       <div class="feature reveal">
         <div class="polaroid-wrap">
-          <div class="polaroid p1" data-cap="开营仪式·冬令营大合影"><img src="photos/hyq-opening2.jpg" alt="汉语桥开营仪式大合影"><div class="p-cap">开营仪式·冬令营大合影</div></div>
+          <div class="polaroid p1 top" data-cap="开营仪式·冬令营大合影"><img src="photos/hyq-opening2.jpg" alt="汉语桥开营仪式大合影"><div class="p-cap">开营仪式·冬令营大合影</div></div>
           <div class="polaroid p3" data-cap="项目主持现场"><img src="photos/hyq-hosting.jpg" alt="主持现场"><div class="p-cap">项目主持现场</div></div>
           <div class="polaroid p4" data-cap="中越学生合影"><img src="photos/hyq-group.jpg" alt="中越学生合影"><div class="p-cap">中越学生合影</div></div>
         </div>
@@ -694,7 +676,7 @@
   <div class="metric"><div class="v"><span data-count="10">0</span><small> 天</small></div><div class="k">项目天数</div></div>
   <div class="metric"><div class="v"><span data-count="2">0</span><small> 场</small></div><div class="k">承办开营/结营仪式</div></div>
 </div>
-          <p class="story">复盘：跨文化项目的统筹没有捷径——日程表精确到半小时、流程预案多备一套，现场才敢说“交给统筹”。</p>
+          <p class="story">作为学生负责人，校园跨文化项目的统筹没有捷径——日程表精确到半小时、流程预案多备一套，现场才敢说“交给统筹”。</p>
         </div>
       </div>
 
@@ -742,8 +724,8 @@
 <h3>AI 工具链与效率工程</h3>
 <div class="skill-row"><div class="s-name">低代码开发<small>使用NoCode独立从0到1落地产品</small></div><div class="bar"><i data-w="85"></i></div><div class="s-lv hi">熟练</div></div>
 <div class="skill-row"><div class="s-name">DEAP 自动化工作流<small>达人结算流程自动化</small></div><div class="bar"><i data-w="80"></i></div><div class="s-lv hi">熟练</div></div>
-<div class="skill-row"><div class="s-name">AI图文视频创作（可灵、即梦、libTV）<small>AI视频生图与内容共创产出物料</small></div><div class="bar"><i data-w="82"></i></div><div class="s-lv hi">熟练</div></div>
-<div class="skill-row"><div class="s-name">Codex / AI编程<small>驱动个人项目开发</small></div><div class="bar"><i data-w="70"></i></div><div class="s-lv">掌握</div></div>
+<div class="skill-row"><div class="s-name">AI图文视频创作<small>使用可灵、libTV进行内容共创产出物料</small></div><div class="bar"><i data-w="82"></i></div><div class="s-lv hi">熟练</div></div>
+<div class="skill-row"><div class="s-name">Codex / AI编程<small>实现个人项目开发</small></div><div class="bar"><i data-w="70"></i></div><div class="s-lv">掌握</div></div>
 </div>
 
 <div class="skill-group">
@@ -762,8 +744,8 @@
 
 <div class="skill-group">
 <h3>美化设计与视频剪辑</h3>
-<div class="skill-row"><div class="s-name">剪映<small>短视频剪辑与活动物料</small></div><div class="bar"><i data-w="80"></i></div><div class="s-lv hi">熟练</div></div>
-<div class="skill-row"><div class="s-name">Canva<small>海报与社交媒体图文</small></div><div class="bar"><i data-w="75"></i></div><div class="s-lv">掌握</div></div>
+<div class="skill-row"><div class="s-name">剪映<small>短视频剪辑</small></div><div class="bar"><i data-w="80"></i></div><div class="s-lv hi">熟练</div></div>
+<div class="skill-row"><div class="s-name">Canva<small>制作物料与社媒图文</small></div><div class="bar"><i data-w="82"></i></div><div class="s-lv hi">熟练</div></div>
 <div class="skill-row"><div class="s-name">PS<small>基础修图与物料调整</small></div><div class="bar"><i data-w="60"></i></div><div class="s-lv">掌握</div></div>
 </div>
 
@@ -1025,181 +1007,6 @@ document.querySelectorAll('.jd-toggle').forEach(function(btn){
   });
 });
 
-/* ---------- 页面内编辑模式 ---------- */
-(function(){
-  const ED_KEY = 'site-edit-overrides-v1';
-  const SKIP = new Set(['SCRIPT','STYLE','NOSCRIPT','TITLE','META','LINK','HEAD','HTML']);
-  // 收集可编辑元素：任何有直接文本内容的元素
-  function editableEls(){
-    return [...document.querySelectorAll('body *')].filter(el=>{
-      if(el.closest('#edit-bar')) return false;
-      if(SKIP.has(el.tagName)) return false;
-      const hasText = [...el.childNodes].some(n=>n.nodeType===3 && n.textContent.trim());
-      return hasText;
-    });
-  }
-  function pathOf(el){
-    const p=[];
-    let cur=el;
-    while(cur && cur!==document.body){ p.unshift([...cur.parentNode.children].indexOf(cur)); cur=cur.parentElement; }
-    return p.join('-');
-  }
-  function loadOverrides(){
-    try{
-      const ov = JSON.parse(localStorage.getItem(ED_KEY)||'{}');
-      let applied = 0;
-      editableEls().forEach(el=>{
-        const k = pathOf(el);
-        if(ov[k]!==undefined && el.textContent!==ov[k]){ el.textContent=ov[k]; applied++; }
-      });
-      return Object.keys(ov).length;
-    }catch(e){ return 0; }
-  }
-  const bar = document.createElement('div');
-  bar.id='edit-bar';
-  bar.style.cssText='position:fixed;bottom:18px;left:18px;z-index:9999;display:flex;gap:8px;font-family:inherit';
-  bar.innerHTML = `
-    <button id="ed-toggle" style="padding:10px 16px;border:none;border-radius:24px;background:#2456e6;color:#fff;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(36,86,230,.35)">✏️ 编辑文字</button>
-    <button id="ed-save" style="padding:10px 16px;border:none;border-radius:24px;background:#16a34a;color:#fff;font-size:13px;font-weight:700;cursor:pointer;display:none;box-shadow:0 4px 14px rgba(22,163,74,.35)">💾 保存修改</button>
-    <button id="ed-reset" style="padding:10px 16px;border:none;border-radius:24px;background:#fff;color:#b91c1c;font-size:13px;font-weight:700;cursor:pointer;border:1px solid #fecaca;display:none;box-shadow:0 2px 8px rgba(0,0,0,.1)">↩️ 还原全部</button>`;
-  document.body.appendChild(bar);
-  const n = loadOverrides();
-  if(n>0) console.log('[edit-mode] 已应用 '+n+' 处暂存修改');
-  let editing = false;
-  document.getElementById('ed-toggle').onclick = function(){
-    editing = !editing;
-    editableEls().forEach(el=>{
-      el.contentEditable = editing ? 'true' : 'false';
-      if(editing){ el.style.outline='1.5px dashed rgba(36,86,230,.45)'; el.style.outlineOffset='2px'; }
-      else { el.style.outline=''; el.style.outlineOffset=''; }
-    });
-    this.textContent = editing ? '✅ 完成编辑' : '✏️ 编辑文字';
-    this.style.background = editing ? '#57534e' : '#2456e6';
-    document.getElementById('ed-save').style.display = editing?'inline-block':'none';
-    document.getElementById('ed-reset').style.display = editing?'inline-block':'none';
-  };
-  document.getElementById('ed-save').onclick = function(){
-    const ov = {};
-    editableEls().forEach(el=>{ ov[pathOf(el)] = el.textContent; });
-    try{ localStorage.setItem(ED_KEY, JSON.stringify(ov)); this.textContent='💾 已保存✓'; setTimeout(()=>this.textContent='💾 保存修改',1200); }
-    catch(e){ alert('保存失败：'+e.message); }
-  };
-  document.getElementById('ed-reset').onclick = function(){
-    if(!confirm('确定还原全部文字为原始版本？')) return;
-    localStorage.removeItem(ED_KEY);
-    location.reload();
-  };
-  // 编辑模式下点击链接不跳转
-  document.addEventListener('click', e=>{
-    if(editing){
-      const a = e.target.closest('a');
-      if(a) e.preventDefault();
-    }
-  }, true);
-})();
-
-/* ---------- 拼贴排布模式 ---------- */
-(function(){
-  const KEY = 'polaroid-layout-v2';
-  const POLS = document.querySelectorAll('#p-startup .polaroid');
-  const wrapOf = p => p.parentElement;
-  function keyOf(p){
-    const f = p.closest('.feature');
-    const idx = Array.prototype.indexOf.call(f.parentElement.children, f) + 1;
-    const cls = (p.className.match(/\bp\d\b/)||[])[0];
-    return idx + '|' + cls;
-  }
-  function cardByKey(k){
-    const seg = k.split('|');
-    const f = document.querySelector('#p-startup .feature:nth-child('+seg[0]+')');
-    return f ? f.querySelector('.'+seg[1]) : null;
-  }
-  // 载入已保存排布
-  try{
-    const d = JSON.parse(localStorage.getItem(KEY)||'{}');
-    Object.keys(d).forEach(k=>{
-      const el = cardByKey(k); if(!el) return;
-      el.style.left = d[k].l+'%'; el.style.top = d[k].t+'%'; el.style.zIndex = d[k].z;
-    });
-  }catch(e){}
-  // 每卡加图层按钮
-  function bump(p, dir){
-    const zs = [].map.call(wrapOf(p).querySelectorAll('.polaroid'), x=>parseInt(getComputedStyle(x).zIndex)||0);
-    const target = dir>0 ? Math.max.apply(null,zs)+1 : Math.min.apply(null,zs)-1;
-    p.style.zIndex = target;
-  }
-  POLS.forEach(p=>{
-    const up = document.createElement('button');
-    up.type='button'; up.className='lz lz-up'; up.textContent='⬆'; up.title='移到最前';
-    up.addEventListener('click', e=>{ e.stopPropagation(); bump(p,1); });
-    const dn = document.createElement('button');
-    dn.type='button'; dn.className='lz lz-down'; dn.textContent='⬇'; dn.title='移到最后';
-    dn.addEventListener('click', e=>{ e.stopPropagation(); bump(p,-1); });
-    p.appendChild(up); p.appendChild(dn);
-  });
-  // 拖动换位
-  let layoutMode = false;
-  POLS.forEach(p=>{
-    p.addEventListener('pointerdown', e=>{
-      if(!layoutMode || e.target.closest('.lz')) return;
-      e.preventDefault();
-      const w = wrapOf(p).getBoundingClientRect();
-      const r = p.getBoundingClientRect();
-      const sx=e.clientX, sy=e.clientY, sl=r.left-w.left, st=r.top-w.top;
-      function mv(ev){
-        p.style.left = ((sl+ev.clientX-sx)/w.width*100)+'%';
-        p.style.top  = ((st+ev.clientY-sy)/w.height*100)+'%';
-      }
-      function up(){ window.removeEventListener('pointermove',mv); window.removeEventListener('pointerup',up); }
-      window.addEventListener('pointermove',mv);
-      window.addEventListener('pointerup',up);
-    });
-  });
-  // 排布模式下拦截照片点按（大图/视频）
-  document.addEventListener('click', e=>{
-    if(layoutMode && !e.target.closest('.lz') && e.target.closest('#p-startup .polaroid')){ e.preventDefault(); e.stopImmediatePropagation(); }
-  }, true);
-  // 工具条
-  const btnCss = 'padding:10px 16px;border:none;border-radius:24px;font-size:13px;font-weight:700;cursor:pointer;color:#fff';
-  const bar = document.createElement('div');
-  bar.style.cssText = 'position:fixed;bottom:18px;left:18px;z-index:9998;display:none;gap:8px;font-family:inherit';
-  bar.innerHTML =
-    '<button id="ly-save" style="'+btnCss+';background:#16a34a;box-shadow:0 4px 14px rgba(22,163,74,.35)">💾 保存排布</button>'+
-    '<button id="ly-reset" style="padding:10px 16px;border:none;border-radius:24px;background:#fff;color:#b91c1c;font-size:13px;font-weight:700;cursor:pointer;border:1px solid #fecaca">↩️ 恢复默认</button>';
-  document.body.appendChild(bar);
-  const tog = document.createElement('button');
-  tog.type='button'; tog.id='ly-toggle';
-  tog.style.cssText = 'position:fixed;bottom:64px;left:18px;z-index:9997;padding:10px 16px;border:none;border-radius:24px;background:#2f6bff;color:#fff;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(47,107,255,.35)';
-  tog.textContent = '🎨 排布拼贴';
-  document.body.appendChild(tog);
-  tog.addEventListener('click', function(){
-    layoutMode = !layoutMode;
-    document.body.classList.toggle('layout-mode', layoutMode);
-    tog.textContent = layoutMode ? '✅ 完成排布' : '🎨 排布拼贴';
-    tog.style.background = layoutMode ? '#57534e' : '#2f6bff';
-    bar.style.display = layoutMode ? 'flex' : 'none';
-  });
-  document.getElementById('ly-save').addEventListener('click', function(){
-    const d = {};
-    POLS.forEach(p=>{
-      const w = wrapOf(p);
-      const l = Math.round(p.offsetLeft/w.offsetWidth*1000)/10;
-      const t = Math.round(p.offsetTop/w.offsetHeight*1000)/10;
-      const z = parseInt(getComputedStyle(p).zIndex)||1;
-      d[keyOf(p)] = {l:l, t:t, z:z};
-    });
-    try{
-      localStorage.setItem(KEY, JSON.stringify(d));
-      this.textContent = '💾 已保存✓';
-      setTimeout(()=>this.textContent='💾 保存排布', 1200);
-    }catch(e){ alert('保存失败：'+e.message); }
-  });
-  document.getElementById('ly-reset').addEventListener('click', function(){
-    if(!confirm('确定恢复拼贴默认排布？')) return;
-    localStorage.removeItem(KEY);
-    location.reload();
-  });
-})();
 </script>
 </body>
 </html>
