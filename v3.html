@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陈淑怡 Soy · 个人站 V3</title>
+<meta name="description" content="陈淑怡（Soy）· 27届 · 市场/运营 · 一个正在把自己摊开给杭州看看的人">
+<style>
+:root{
+  --sky1:#aee1f5; --sky2:#c9ecf9; --hill1:#bfe6c8; --hill2:#a5d9b2; --hill3:#8fcf9f;
+  --ink:#1c2b33; --muted:#5c6b74;
+  --card:#ffffff; --line:#e5efe9;
+  --pink:#ff5f9e; --blue:#2f7bff; --yellow:#ffd23f; --green:#2fce6b; --orange:#ff8a2e;
+  --radius:20px;
+  --sh:0 10px 30px rgba(30,80,60,.10);
+  --disp:'Arial Black',Arial,'Microsoft YaHei',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;color:var(--ink);line-height:1.75;background:#f4fbf6}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+/* ---------- 顶栏 ---------- */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:26px;height:58px}
+.brand{font-family:var(--disp);font-size:19px;letter-spacing:.5px}
+.brand b{color:var(--blue)}
+.brand small{font-family:inherit;font-size:15px;color:var(--pink)}
+.topbar nav{display:flex;gap:4px;margin-left:auto}
+.topbar nav a{font-size:13.5px;font-weight:700;color:var(--muted);padding:7px 13px;border-radius:999px;transition:.2s}
+.topbar nav a:hover{color:var(--ink);background:#eef7f1}
+.status{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;color:#0e8a4d;background:#e5f9ee;border:1px solid #bfeed6;border-radius:999px;padding:5px 12px;white-space:nowrap}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(47,206,107,.5)}60%{box-shadow:0 0 0 6px rgba(47,206,107,0)}}
+@media(max-width:760px){.topbar nav{display:none}.status{margin-left:auto}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--sky1),var(--sky2) 70%);padding:70px 0 150px;text-align:center}
+.hero .sun{position:absolute;top:34px;right:9%;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 38% 35%,#fff6cf,var(--yellow));box-shadow:0 0 60px rgba(255,210,63,.65);animation:bob 6s ease-in-out infinite}
+.hero .cloud{position:absolute;background:#fff;opacity:.85;border-radius:999px;filter:blur(1px);animation:drift linear infinite}
+.cloud.c1{width:150px;height:44px;top:16%;left:-160px;animation-duration:46s}
+.cloud.c2{width:110px;height:34px;top:34%;left:-140px;animation-duration:62s;animation-delay:8s}
+.cloud.c3{width:190px;height:50px;top:8%;left:-200px;animation-duration:75s;animation-delay:20s}
+@keyframes drift{to{transform:translateX(calc(100vw + 320px))}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hill{position:absolute;left:-5%;width:110%;bottom:-8px;pointer-events:none}
+.hill svg{display:block;width:100%;height:auto}
+.hill.h1{bottom:-16px;opacity:.95;animation:hillMove 26s ease-in-out infinite alternate}
+.hill.h2{bottom:-30px;opacity:.8;animation:hillMove 34s ease-in-out infinite alternate-reverse}
+.hill.h3{bottom:-44px;opacity:1}
+@keyframes hillMove{from{transform:translateX(-16px)}to{transform:translateX(16px)}}
+.char{width:min(240px,52vw);margin:0 auto 6px;border-radius:50%;overflow:hidden;box-shadow:0 18px 50px rgba(40,110,80,.22);border:6px solid rgba(255,255,255,.65);animation:bob 5.2s ease-in-out infinite}
+.char img{width:100%}
+.hero h1{font-family:var(--disp);font-size:clamp(34px,6vw,58px);letter-spacing:1px;margin:14px 0 4px}
+.hero h1 .en{color:var(--pink)}
+.hero .tag{font-size:clamp(15px,2.4vw,19px);font-weight:700;color:#2c4a3c}
+.hero .tag .hl{background:linear-gradient(transparent 60%,var(--yellow) 60%,var(--yellow) 92%,transparent 92%);padding:0 3px}
+.hero .meta{margin-top:10px;font-size:13px;color:var(--muted);font-weight:700}
+.hero .cta{margin-top:22px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;font-weight:900;font-size:14.5px;padding:12px 26px;border-radius:999px;transition:.2s}
+.btn.pri{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(20,40,30,.25)}
+.btn.pri:hover{transform:translateY(-2px)}
+.btn.ghost{background:rgba(255,255,255,.8);border:2px solid var(--ink)}
+.btn.ghost:hover{background:#fff;transform:translateY(-2px)}
+
+/* ---------- 通用 section ---------- */
+section{padding:72px 0}
+.sec-head{margin-bottom:8px}
+.sec-head .en{font-family:var(--disp);font-size:12px;letter-spacing:4px;color:var(--muted)}
+.sec-head h2{font-family:var(--disp);font-size:clamp(28px,4.6vw,42px);line-height:1.15;margin:2px 0 6px}
+.sec-head h2 .mk{background:linear-gradient(transparent 62%,var(--yellow) 62%,var(--yellow) 92%,transparent 92%);padding:0 4px}
+.sec-head p{color:var(--muted);font-size:14.5px;max-width:640px}
+section{scroll-margin-top:66px}
+
+/* 距离卡 & 小卡 */
+.fun-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--sh);transition:transform .25s}
+.card:hover{transform:translateY(-4px)}
+.dist{grid-column:span 7;background:linear-gradient(135deg,#e8f7ee,#d8f0ff);position:relative;overflow:hidden}
+.dist .big{font-family:var(--disp);font-size:clamp(26px,4vw,40px);line-height:1.2}
+.dist .big span{color:var(--blue)}
+.dist .sub{font-size:13.5px;color:var(--muted);margin-top:8px;font-weight:700}
+.mini{grid-column:span 5}
+.fgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:26px}
+.fcard{grid-column:span 4;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--sh);transition:transform .25s}
+.fcard:hover{transform:translateY(-4px) rotate(-.5deg)}
+.fcard .emo{font-size:30px}
+.fcard h4{font-size:16px;margin:8px 0 4px}
+.fcard p{font-size:13.5px;color:var(--muted)}
+@media(max-width:860px){.dist,.mini{grid-column:span 12}.fcard{grid-column:span 6}}
+@media(max-width:560px){.fcard{grid-column:span 12}}
+
+/* 数字成果 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--sh)}
+.stat b{font-family:var(--disp);font-size:clamp(22px,3vw,32px);display:block}
+.stat b i{font-style:normal;font-size:.55em;color:var(--orange)}
+.stat span{font-size:12.5px;color:var(--muted);font-weight:700}
+.stat em{display:block;font-style:normal;font-size:11px;color:#94a39b;margin-top:4px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* 经历 */
+.job{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--sh);padding:24px 26px;margin-top:18px}
+.job .head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+.job .co{font-family:var(--disp);font-size:20px}
+.job .role{font-weight:800;color:var(--pink);font-size:14.5px}
+.job .time{margin-left:auto;font-size:12.5px;font-weight:800;color:var(--muted);background:#f2f7f2;border-radius:999px;padding:3px 12px}
+.job .duty{font-size:14px;color:#33454e;margin-top:8px}
+.job ul{margin-top:10px;padding-left:0;list-style:none}
+.job li{font-size:13.8px;color:var(--muted);padding:5px 0 5px 24px;position:relative}
+.job li::before{content:"✦";position:absolute;left:2px;color:var(--orange);font-size:12px;top:7px}
+.job li b{color:var(--ink)}
+
+/* 作品 */
+.proj{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column;transition:transform .25s}
+.proj:hover{transform:translateY(-5px)}
+.proj .pic{height:190px;overflow:hidden;background:#eef4ef}
+.proj .pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.proj:hover .pic img{transform:scale(1.06)}
+.proj .body{padding:18px 20px 20px}
+.proj h4{font-size:17px}
+.proj .desc{font-size:13.5px;color:var(--muted);margin-top:6px}
+.proj .tags{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.proj .tags span{font-size:11px;font-weight:800;color:#0e6e46;background:#e5f7ec;border-radius:999px;padding:3px 10px}
+.proj .tags span.t2{color:#0a5bd0;background:#e7f0ff}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+@media(max-width:860px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+.sub-h{font-family:var(--disp);font-size:19px;margin:38px 0 0;display:flex;align-items:center;gap:10px}
+.sub-h::before{content:"";width:22px;height:5px;border-radius:3px;background:var(--orange)}
+
+/* 荣誉 */
+.hgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:26px}
+.hcard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--sh);transition:transform .25s}
+.hcard:hover{transform:translateY(-4px) scale(1.02)}
+.hcard .pic{height:110px;overflow:hidden;background:#f2f6f2}
+.hcard .pic img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hcard p{font-size:12px;font-weight:800;padding:10px 12px;line-height:1.5}
+.hcard p em{display:block;font-style:normal;font-size:11px;color:var(--orange);font-weight:900}
+@media(max-width:860px){.hgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.hgrid{grid-template-columns:repeat(2,1fr)}}
+
+/* 联系 */
+#contact .inner{background:linear-gradient(135deg,#dff3e6,#dbe9ff);border-radius:26px;padding:44px 36px;text-align:center;box-shadow:var(--sh)}
+#contact h3{font-family:var(--disp);font-size:clamp(24px,4vw,36px)}
+#contact .ways{margin-top:22px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+#contact .way{background:#fff;border-radius:16px;padding:14px 22px;box-shadow:var(--sh);font-weight:800;font-size:14px}
+#contact .way small{display:block;font-weight:700;color:var(--muted);font-size:11.5px}
+#contact .qr{width:110px;border-radius:12px;margin:18px auto 0;box-shadow:var(--sh)}
+
+/* 页脚 */
+footer{padding:44px 0 60px;text-align:center;color:var(--muted);font-size:12.5px}
+footer .log{background:#fff;border:1px dashed #cfe3d6;border-radius:14px;display:inline-block;padding:12px 20px;margin-bottom:14px}
+footer .log b{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">陈淑怡 <small>Soy</small><b>.</b></div>
+    <nav>
+      <a href="#fun">关于我</a><a href="#exp">经历</a><a href="#work">作品</a><a href="#honor">荣誉</a><a href="#contact">联系</a>
+    </nav>
+    <span class="status"><i></i>正在看杭州实习机会：是</span>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="sun"></div>
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="char"><img src="media/char-soy-placeholder.png" alt="Soy 的 3D 小人（占位）"></div>
+    <h1>你好，我是<span class="en"> 陈淑怡</span></h1>
+    <p class="tag">一个<span class="hl">把自己当成产品</span>来运营的市场人</p>
+    <p class="meta">27届 · 市场 / 运营 · 浙江外国语学院（国际经济与贸易 · 全英教学）</p>
+    <div class="cta">
+      <a class="btn pri" href="#work">直接看作品 →</a>
+      <a class="btn ghost" href="#contact">联系我</a>
+    </div>
+  </div>
+  <div class="hill h3"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><path fill="#8fcf9f" d="M0,120 C240,40 480,150 720,90 C960,30 1200,140 1440,70 L1440,180 L0,180 Z"/></svg></div>
+  <div class="hill h2"><svg viewBox="0 0 1440 160" preserveAspectRatio="none"><path fill="#a5d9b2" d="M0,90 C260,160 520,30 780,90 C1040,150 1240,40 1440,100 L1440,160 L0,160 Z"/></svg></div>
+  <div class="hill h1"><svg viewBox="0 0 1440 140" preserveAspectRatio="none"><path fill="#bfe6c8" d="M0,80 C300,140 560,40 860,90 C1120,130 1300,60 1440,90 L1440,140 L0,140 Z"/></svg></div>
+</section>
+
+<!-- ===== 关于我：距离卡 + 小卡 ===== -->
+<section id="fun">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">ABOUT ME · 但不是简历腔</div>
+      <h2>先说几个<span class="mk">真话</span></h2>
+      <p>以下每一条都可以当面验证。判断一个人，事实比形容词可靠。</p>
+    </div>
+
+    <div class="fun-grid">
+      <div class="card dist" id="dist-card">
+        <div class="big">🛰 正在计算你离我有多远…</div>
+        <div class="sub" id="dist-sub">我在杭州（2026 年 11 月起常驻），如果你也在杭州，那我们该见一面。</div>
+      </div>
+      <div class="card mini" style="display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:30px">🧭</div>
+        <h4 style="font-size:16px;margin:6px 0 4px">人生格言：充分发挥主观能动性</h4>
+        <p style="font-size:13.5px;color:var(--muted)">写在浙外个人简历模板第一行的话，也是我能从温州一路折腾到杭州的原因。</p>
+      </div>
+    </div>
+
+    <div class="fgrid">
+      <div class="fcard"><div class="emo">🅴🅽🆃🅹</div><h4>ENTJ 指挥官</h4><p>测试三次没变过。适合统筹项目、敢拍板、也敢背锅。</p></div>
+      <div class="fcard"><div class="emo">🐚</div><h4>温州人</h4><p>经商基因写进户口本。2026 年 11 月从北京杀回杭州，不打算再走了。</p></div>
+      <div class="fcard"><div class="emo">🚴‍♀️</div><h4>骑行爱好者</h4><p>北京 weekends 刷过长安街，回杭州的目标是把千岛湖环线骑完。</p></div>
+      <div class="fcard"><div class="emo">🌍</div><h4>全英教学四年</h4><p>国际经济与贸易专业，口语可以直接接待外国游客——真的接待过，带团那种。</p></div>
+      <div class="fcard"><div class="emo">🛠️</div><h4>NoCode 手作党</h4><p>数据看板、知识转盘、你现在看到的这个网站，都是我自己搭的。</p></div>
+      <div class="fcard"><div class="emo">🥔</div><h4>POPO 小土豆之母</h4><p>在校创过业，品牌 IP 是一颗小土豆，从 0 做到真实流水（下面有案）。</p></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>200.5<i>万+</i></b><span>热点项目曝光</span><em>有热榜截图为证 ↓</em></div>
+      <div class="stat"><b>1208<i>万+</i></b><span>视频播放量</span><em>快手热榜可查 ↓</em></div>
+      <div class="stat"><b>800<i>+</i></b><span>达人建联</span><em>四平台筛号提报 ↓</em></div>
+      <div class="stat"><b>2.8<i>w</i></b><span>公众号单篇最高阅读</span><em>爆文截图在作品区 ↓</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 经历 ===== -->
+<section id="exp" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">EXPERIENCE · 实习经历</div>
+      <h2>四段实习，<span class="mk">每段都干真活</span></h2>
+      <p>完整版职责描述在旧版页面，这里只放最硬的部分。</p>
+    </div>
+
+    <div class="job">
+      <div class="head"><span class="co">美团</span><span class="role">市场营销</span><span class="time">2026.07 - 至今 · 在职</span></div>
+      <p class="duty">参与小团&团购品牌的热点事件策划、品牌战役线下投放与 AI Club 共创。</p>
+      <ul>
+        <li>参与七夕热点事件《男子七夕同一餐厅相亲五位女生》全链路传播，<b>全网曝光 200.5 万+、播放 1208 万+、互动 25.5 万+</b>，登上快手热榜</li>
+        <li>跟进中秋国庆双节线下硬广投放全流程，协同 8 家媒体代理与供应商，<b>落地 13 城数百个点位</b>（LED/地铁/电梯屏等）</li>
+        <li>热点项目数据与花费<b>周度追踪复盘</b>；用 NoCode 独立开发自动化数据看板，<b>每周节省 3-4 小时人工统计</b></li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="head"><span class="co">阿里巴巴 · 淘宝天下</span><span class="role">达人运营</span><span class="time">2026.04 - 2026.07</span></div>
+      <p class="duty">承接"淘小宝亲亲日"、"淘宝闪购×超自然行动组"联名等 10+ 项目。</p>
+      <ul>
+        <li>四维筛选标准跨四平台筛号，<b>累计建联达人 800+，提报采纳率 38%</b></li>
+        <li>"淘小宝亲亲日"落地 48 位杭州本地 KOL 种草，<b>总曝光 130w+、爆文 3-4 篇</b></li>
+        <li>用 DEAP 搭自动化工作流，<b>单批 20 名达人结算邮件从 2 小时压到 20 分钟</b>；处理联名项目评论区风向危机，保障内容资产完整交付</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="head"><span class="co">快手</span><span class="role">广告运营</span><span class="time">2025.10 - 2026.02</span></div>
+      <p class="duty">为招商加盟与酒店旅游客户打通"点击-留资-转化"全链路。</p>
+      <ul>
+        <li>MCB 试跑+OCPM 压价两阶段出价方案，<b>新户起量成本低于行业 benchmark 10%</b></li>
+        <li>搭建信息流素材库并自建看板做素材生命周期管理，<b>KA 客户素材曝光增长 308%</b>，线索 CVR 提升至 3.7%</li>
+        <li>新客户冷启通过率 81%，存量户跃迁率 30%</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="head"><span class="co">快手</span><span class="role">内容运营</span><span class="time">2025.08 - 2025.10</span></div>
+      <p class="duty">在平台打压录播的背景下，做本地生活真人直播的 GMV 与生态调优。</p>
+      <ul>
+        <li>运营达人社群并制定内容激励策略，<b>累计建联引入 300+ 达人，社群月活开播率 +25%</b></li>
+        <li>策划华东城市群直播打榜赛双轨制方案，<b>场次达成率 108%、GMV 超额完成 120%</b></li>
+        <li>自播测试 13 场沉淀 QA 文档，达人开播成功率 <b>62% → 89%</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 作品 ===== -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">WORKS · 作品</div>
+      <h2>不只是做过，<span class="mk">是真的落地过</span></h2>
+      <p>每张卡片都对应真实运行过的东西：有工具、有品牌、有营收、有村政府的盖章认可。</p>
+    </div>
+
+    <div class="sub-h">用 AI 造工具，而不是只用工具</div>
+    <div class="pgrid">
+      <div class="proj">
+        <div class="pic"><img src="photos/aiclub-home-crop.webp" alt="AI Club 龙虎榜"></div>
+        <div class="body">
+          <h4>AI Club 龙虎榜数据看板</h4>
+          <p class="desc">美团内部 NoCode 从 0 到 1：MVP 内容榜、增粉/互动成本追踪，支撑投流资源分配决策（数据保密，附导览视频）。</p>
+          <div class="tags"><span>NoCode</span><span class="t2">团队工具</span></div>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="pic"><img src="photos/wheel-home.webp" alt="知识转盘 Spindle"></div>
+        <div class="body">
+          <h4>知识转盘 Spindle</h4>
+          <p class="desc">知识概念随机转盘小工具，已部署上线并开源，支持在线体验。</p>
+          <div class="tags"><span>已上线</span><span class="t2">已开源</span></div>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="pic"><img src="photos/popo-hot.webp" alt="POPO陪拍"></div>
+        <div class="body">
+          <h4>POPO 陪拍 · 校园创业</h4>
+          <p class="desc">以 Z 世代孤独经济为背景的陪拍小程序，2024 年上线，需求验证→路演地推→变现全流程操盘，品牌 IP 是小土豆。</p>
+          <div class="tags"><span>创始人</span><span class="t2">真实流水</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-h">创业实践与校园实践</div>
+    <div class="pgrid">
+      <div class="proj">
+        <div class="pic"><img src="photos/yiqi-village.webp" alt="益起译"></div>
+        <div class="body">
+          <h4>益起译公益组织</h4>
+          <p class="desc">带外国友人深度游中国乡村，获两家村政府书面认可，评上校级优秀暑期实践团队。</p>
+          <div class="tags"><span>联合创始人</span><span class="t2">10+ 次乡村深度游</span></div>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="pic"><img src="photos/ziran-boyue.webp" alt="自然不语"></div>
+        <div class="body">
+          <h4>自然不语亲子研学</h4>
+          <p class="desc">负责活动路线策划与品牌社媒内容排版，奠定公众号品牌调性。</p>
+          <div class="tags"><span>核心成员</span><span class="t2">营收可查</span></div>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="pic"><img src="photos/chaxie-fengwu.webp" alt="茶歇小栈"></div>
+        <div class="body">
+          <h4>茶歇小栈 · 酸奶产品线代运营</h4>
+          <p class="desc">承接宋酒文化酸奶产品线校园代运营，地推获客+私域促活，月度营业额目标 100% 达成。</p>
+          <div class="tags"><span>核心成员</span><span class="t2">获客-转化-复购闭环</span></div>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="pic"><img src="photos/hyq-opening2.webp" alt="汉语桥"></div>
+        <div class="body">
+          <h4>2025 中越汉语桥"电商之旅"</h4>
+          <p class="desc">学生负责人：线下筹备、日程统筹、开营结营承办，全程主持 30 课时。</p>
+          <div class="tags"><span>学生负责人</span><span class="t2">跨文化项目</span></div>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="pic"><img src="photos/popo-gzh.webp" alt="公众号爆文"></div>
+        <div class="body">
+          <h4>IP 公众号爆文运营</h4>
+          <p class="desc">单篇最高阅读 2.8w，社媒矩阵（公众号+小红书）搭建与运营。</p>
+          <div class="tags"><span>内容</span><span class="t2">2.8w 阅读</span></div>
+        </div>
+      </div>
+      <div class="proj">
+        <div class="pic"><img src="photos/popo-ground2.webp" alt="地推现场"></div>
+        <div class="body">
+          <h4>校园地推与摆摊获客</h4>
+          <p class="desc">地推、内容、社群三条获客路都试过，知道哪条的 ROI 撑得起商业模式。</p>
+          <div class="tags"><span>实战</span><span class="t2">闭环验证</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 荣誉 ===== -->
+<section id="honor" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">HONORS · 荣誉墙</div>
+      <h2>省级 A 类竞赛，<span class="mk">只列省奖及以上</span></h2>
+      <p>点击图片可查看证书原件（放大后可核对颁奖章与落款）。</p>
+    </div>
+    <div class="hgrid">
+      <div class="hcard"><div class="pic"><img src="certs/cert-securities.jpg" alt=""></div><p><em>省级一等奖</em>浙商证券同花顺杯·证券投资大赛</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/cert-ecommerce.jpg" alt=""></div><p><em>省级一等奖</em>第十九届浙江省大学生电子商务竞赛</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/cert-innovation.jpg" alt=""></div><p><em>省级银奖</em>建行杯·国际大学生创新大赛</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/cert-rural.jpg" alt=""></div><p><em>省级银奖</em>建行裕农通杯·乡村振兴创意大赛</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/cert-digitaltrade.jpg" alt=""></div><p><em>华东赛区三等奖</em>全国大学生数字贸易综合技能大赛</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/cert-finance.jpg" alt=""></div><p><em>省级三等奖</em>第十届浙江省大学生金融创新大赛</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/honor-chuangxin.jpg" alt=""></div><p><em>单项奖学金</em>创新创业奖（2024-2025）</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/honor-shehui.jpg" alt=""></div><p><em>单项奖学金</em>社会工作奖（2024-2025）</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/wuxing-team.jpg" alt=""></div><p><em>校级五星社团</em>大创联合会副社长</p></div>
+      <div class="hcard"><div class="pic"><img src="certs/cert-rongguang.jpg" alt=""></div><p><em>年度表彰</em>浙外荣光 2024 表彰大会</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 联系 ===== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="inner">
+      <h3>看到这里还没关掉，<br>说明我们有缘。</h3>
+      <p style="margin-top:10px;color:var(--muted);font-weight:700">正在看杭州的市场 / 运营实习机会 · 到岗时间灵活</p>
+      <div class="ways">
+        <div class="way">chenshuyi0627@163.com<small>邮箱</small></div>
+        <div class="way">15990062752<small>电话（微信同号）</small></div>
+        <div class="way">SOY0627.github.io<small>本站地址</small></div>
+      </div>
+      <img class="qr" src="photos/wechat-qr.webp" alt="微信二维码">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="log"><b>v3.0</b> · 2026.10.30 上线 · 建站动机：离职回杭，把自己摊开给杭州看看</div>
+  <div>© 2026 至今 陈淑怡 SOY · 本站由 Soy 自己搭的，占位小人暂由 AI 扮演</div>
+</footer>
+
+<script>
+// ---- 距离卡：IP 定位 → 球面距离（目标：杭州 30.2741,120.1551）----
+(function(){
+  const HZ = [30.2741, 120.1551];
+  const card = document.getElementById('dist-card');
+  const big = card.querySelector('.big');
+  const sub = document.getElementById('dist-sub');
+  const fail = function(){
+    big.innerHTML = '🛰 你离我大概……算不出来';
+    sub.textContent = '定位服务没连上（内网很正常）。总之我在杭州，你在哪不重要，重要的是可以来面我。';
+  };
+  fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
+    if(!d || typeof d.latitude !== 'number'){ fail(); return; }
+    const R=6371, rad=x=>x*Math.PI/180;
+    const dLat=rad(HZ[0]-d.latitude), dLon=rad(HZ[1]-d.longitude);
+    const a=Math.sin(dLat/2)**2+Math.cos(rad(d.latitude))*Math.cos(rad(HZ[0]))*Math.sin(dLon/2)**2;
+    const km=Math.round(2*R*Math.atan2(Math.sqrt(a),Math.sqrt(1-a)));
+    big.innerHTML = km<50
+      ? '🎯 你就在杭州！那还不 <span>快约我</span>？'
+      : '根据你的 IP，你离我大约 <span>'+km.toLocaleString()+' 公里</span>';
+    sub.textContent = km<50
+      ? '同城的缘分不常见 —— 我 2026 年 11 月起常驻杭州，简历发过来，咖啡我请。'
+      : '我在杭州（2026 年 11 月起常驻）。距离只是个数字，机会才是变量 —— 欢迎远程面。';
+  }).catch(fail);
+})();
+
+// ---- 滚动浮现 ----
+(function(){
+  const io = new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='none'; io.unobserve(e.target); }
+  }),{threshold:.12});
+  document.querySelectorAll('.card,.fcard,.stat,.job,.proj,.hcard').forEach(el=>{
+    el.style.opacity=0; el.style.transform='translateY(22px)';
+    el.style.transition='opacity .6s ease,transform .6s cubic-bezier(.22,.9,.36,1)';
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
