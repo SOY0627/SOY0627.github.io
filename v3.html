@@ -432,6 +432,20 @@
   .fun-cards .fcard:nth-child(4) .fcard-back{background:var(--blue);color:#fff}
   .fun-cards .fcard:nth-child(5) .fcard-back{background:#ffd9ec}
   .fun-cards .fcard:nth-child(6) .fcard-back{background:#fff0e0}
+  /* ---------- V3 彩蛋：小人吐槽/小土豆粒子/骑行彩蛋/打字机 ---------- */
+  .hero-char{cursor:pointer;pointer-events:auto}
+  .hero-char.hop{animation:hop .45s ease !important}
+  @keyframes hop{0%{transform:translateY(0)}40%{transform:translateY(-26px) scale(1.08)}100%{transform:translateY(0)}}
+  .char-bubble{position:absolute;left:-206px;top:-6px;background:#fff;border-radius:14px;padding:10px 14px;font-size:13px;font-weight:800;color:var(--ink);box-shadow:var(--sh-soft);opacity:0;transform:translateY(6px) scale(.9);transition:.25s;pointer-events:none;max-width:216px;text-align:center;z-index:5}
+  .char-bubble.show{opacity:1;transform:translateY(0) scale(1)}
+  .char-bubble::after{content:'';position:absolute;right:-8px;top:50%;margin-top:-8px;border:8px solid transparent;border-left-color:#fff;border-right:0}
+  .potato{position:fixed;pointer-events:none;z-index:9999;animation:potatoPop .9s ease forwards}
+  @keyframes potatoPop{0%{transform:translateY(0) scale(.5) rotate(0);opacity:1}100%{transform:translateY(-110px) rotate(50deg) scale(1.2);opacity:0}}
+  .bike-convoy{position:fixed;left:-180px;bottom:24px;font-size:46px;z-index:9999;pointer-events:none;animation:ride 3.4s linear forwards}
+  @keyframes ride{to{transform:translateX(calc(100vw + 300px))}}
+  .bike-note{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#fff;border-radius:12px;padding:8px 16px;font-weight:900;font-size:14px;box-shadow:var(--sh-soft);z-index:9999;pointer-events:none;animation:potatoPop 3.4s ease forwards}
+  .type-cursor{display:inline-block;width:2px;height:1em;background:var(--ink);vertical-align:-2px;margin-left:2px;animation:blink 1s step-end infinite}
+  @keyframes blink{50%{opacity:0}}
   @media (max-width:900px){
     .hero-art,.hero-char{display:none}
     #hero{padding:26px 20px}
@@ -519,6 +533,7 @@
   <section id="hero" class="hero">
     <div class="hero-art" aria-hidden="true">
       <img class="hero-char" src="media/char-soy.png" alt="3D小人（占位图，待换）">
+      <div class="char-bubble" id="charBubble"></div>
       <svg viewBox="0 0 360 150" preserveAspectRatio="none">
         <path class="hill-b" d="M0 150 L0 92 Q80 28 185 84 Q275 132 360 64 L360 150 Z" fill="#cdeb9f"/>
         <path class="hill-a" d="M0 150 L0 118 Q105 58 215 108 Q298 144 360 106 L360 150 Z" fill="#a8dd7c"/>
@@ -527,7 +542,7 @@
     <div class="hello">HELLO, I'M</div>
     <h1>陈淑怡</h1>
     <p class="pos">27届 · <b>市场 / 运营 / 销售</b> · 浙江外国语学院（国际经济与贸易·全英教学）</p>
-    <p class="pos" style="margin-top:4px">我的人生格言：充分发挥主观能动性。</p>
+    <p class="pos" style="margin-top:4px">我的人生格言：<span id="twText">充分发挥主观能动性</span><span class="type-cursor">&nbsp;</span></p>
     <div class="cta">
       <a class="btn primary" href="简历/陈淑怡-运营版.pdf" download="陈淑怡-2027届-浙江外国语学院.pdf">下载简历 PDF</a>
       <a class="btn ghost" href="#contact">联系我</a>
@@ -1164,6 +1179,90 @@ document.querySelectorAll('.fcard').forEach(c=>{
   };
   card.addEventListener('click',measure);
   new IntersectionObserver((es,obs)=>{es.forEach(e=>{if(e.isIntersecting){measure();obs.disconnect();}});},{threshold:.4}).observe(card);
+})();
+
+/* ---------- V3 彩蛋 ---------- */
+/* ① 戳小人 → 跳跃 + 吐槽气泡 */
+(function(){
+  const char=document.querySelector('.hero-char'),bubble=document.getElementById('charBubble');
+  if(!char||!bubble) return;
+  const QUOTES=[
+    '招聘官你好呀，戳我干嘛 👀',
+    '11 月我就回杭州了，别拦我',
+    '温州人从不认输（除非饭要清淡）',
+    '骑车能解决 80% 的烦恼',
+    '简历就在上面，就差一个你 🥺',
+    'ENTJ 的字典里没有「算了」',
+    '本小人由 AI 生成，灵魂是我自己的',
+    '再戳我就真的去骑车了 🚴'
+  ];
+  let qi=-1,timer;
+  char.addEventListener('click',e=>{
+    e.stopPropagation();
+    qi=(qi+1)%QUOTES.length;
+    bubble.textContent=QUOTES[qi];
+    bubble.classList.add('show');
+    char.classList.remove('hop');void char.offsetWidth;char.classList.add('hop');
+    clearTimeout(timer);
+    timer=setTimeout(()=>bubble.classList.remove('show'),2400);
+  });
+})();
+
+/* ② 点页面任意处 → 蹦小土豆（POPO 之母专属） */
+document.addEventListener('click',e=>{
+  const p=document.createElement('span');
+  p.className='potato';
+  p.textContent='🥔';
+  p.style.left=(e.clientX-11+Math.random()*22-11)+'px';
+  p.style.top=(e.clientY-14)+'px';
+  p.style.fontSize=(18+Math.random()*10)+'px';
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),950);
+});
+
+/* ③ 连点侧边栏头像 5 次 → 骑行车队横穿屏幕 */
+(function(){
+  const av=document.querySelector('.brand .avatar');
+  if(!av) return;
+  let n=0,timer;
+  av.style.cursor='pointer';
+  av.addEventListener('click',()=>{
+    clearTimeout(timer);
+    n++;
+    if(n>=5){
+      n=0;
+      const fleet=document.createElement('div');
+      fleet.className='bike-convoy';
+      fleet.textContent='🚴💨🚴💨🚴';
+      document.body.appendChild(fleet);
+      const note=document.createElement('div');
+      note.className='bike-note';
+      note.textContent='Soy 骑行小队发车：目的地杭州 🚴';
+      document.body.appendChild(note);
+      setTimeout(()=>{fleet.remove();note.remove();},3400);
+    } else {
+      timer=setTimeout(()=>{n=0},1200);
+    }
+  });
+})();
+
+/* ④ 打字机轮播格言：打完停留→逐字擦除→下一句 */
+(function(){
+  const el=document.getElementById('twText');
+  if(!el) return;
+  const LINES=['充分发挥主观能动性','会骑车的人，运气不会太差','正在从北京迁居杭州（行李：一箱策划案）','用 AI 造工具，而不是只用工具'];
+  let li=0,i=LINES[0].length,erasing=false;
+  setInterval(()=>{
+    const cur=LINES[li];
+    if(!erasing){
+      i++;
+      if(i>cur.length){i=cur.length;erasing=true;return;}
+    } else {
+      i--;
+      if(i<0){i=0;erasing=false;li=(li+1)%LINES.length;}
+    }
+    el.textContent=cur.slice(0,i);
+  },110);
 })();
 
 </script>
